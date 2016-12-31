@@ -10,12 +10,10 @@ DEBUG = True
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'pyromane',
         'USER': 'pyromane',
         'PASSWORD': get_secret("DATABASE_PASSWORD"),  # noqa
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
 

@@ -1,2 +1,5 @@
 # Import Base Requirements
 -r base.txt
+
+# We use MySQL in production
+MySQL-python==1.2.5
