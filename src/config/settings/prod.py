@@ -1,27 +1,12 @@
 # coding:utf-8
-from .base import * # noqa
+from .base import *  # noqa
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-##
-# Ubuntu paquets
-# - postgresql
-# - python-psycopg2
-# - libpq-dev
-#
-# Packages python
-# - psycopg2
-#
-# Help
-# http://www.indjango.com/ubuntu-install-postgresql-and-pgadmin/
-# http://stackoverflow.com/questions/8200917/postgresql-create-a-new-db-through-pgadmin-ui
 
 DATABASES = {
     'default': {
@@ -34,4 +19,4 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = BASE_DIR.child('static-for-dev')  # noqa
+STATIC_ROOT = BASE_DIR.child('static')  # noqa

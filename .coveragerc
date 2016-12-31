@@ -3,6 +3,9 @@ omit =
     # omit 
     src/config/wsgi.py
     src/config/settings/base.py
+    src/config/settings/local.py
+    src/config/settings/prod.py
+    src/config/settings/test.py
     src/manage.py
     src/*/apps.py
 

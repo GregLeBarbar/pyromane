@@ -2,7 +2,7 @@
 
 {% block content %}
     <h2>{{ page.title }}</h2>
-    <div>{{ page.content }}</div>
+    <div>{{ page.content|safe }}</div>
     <div class="tags">
     {% for tag in page.tags.all %}
         <a href="{% url 'get_pages_by_tag' tag=tag %}">{{ tag }}</a>

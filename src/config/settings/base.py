@@ -146,19 +146,19 @@ CKEDITOR_CONFIGS = {
 
     'wiki': {
         'skin': 'moono',
-        'toolbar_wiki' : [
-            { 'name': 'basicstyles1', 'items' : ['Bold', 'Italic', 'Underline', ] },
-            { 'name': 'basicstyles2', 'items' : ['NumberedList', 'BulletedList',] },
-            { 'name': 'basicstyles3', 'items' : ['Subscript', 'Superscript',] },
-            { 'name': 'links', 'items' : [ 'Link', 'Unlink', ] },
-            { 'name': 'clipboard', 'items' : ['Undo', 'Redo'] },
-            { 'name': 'tools', 'items': ['Maximize'] },
-            { 'name': 'document', 'items': ['Source'] },
+        'toolbar_wiki': [
+            {'name': 'basicstyles1', 'items': ['Bold', 'Italic', 'Underline']},
+            {'name': 'basicstyles2', 'items': ['NumberedList', 'BulletedList']},
+            {'name': 'basicstyles3', 'items': ['Subscript', 'Superscript']},
+            {'name': 'links', 'items': ['Link', 'Unlink']},
+            {'name': 'clipboard', 'items': ['Undo', 'Redo']},
+            {'name': 'tools', 'items': ['Maximize']},
+            {'name': 'document', 'items': ['Source']},
         ],
         'toolbar': 'wiki',  # put selected toolbar config here
         'tabSpaces': 4,
         'height': 600,
-        'width':1500,
+        'width': 1500,
 
         ##
         # Link configuration
@@ -167,13 +167,9 @@ CKEDITOR_CONFIGS = {
         # hide tab and browser server button
         'linkShowAdvancedTab': False,
         'linkShowTargetTab': False,
-        'removeDialogTabs':'link:upload',
+        'removeDialogTabs': 'link:upload',
 
         # hide browser server button
         'filebrowserBrowseUrl': '',
-
-
-
-
     },
 }

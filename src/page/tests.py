@@ -3,7 +3,7 @@ from django.test import RequestFactory
 from django.test import TestCase
 
 from page.models import Page
-from page.views import home, get_page, create_page
+from page.views import home, get_page, create_page, get_pages_by_tag
 
 
 class PageModelTestCase(TestCase):
@@ -53,12 +53,16 @@ class PageViewTestCase(TestCase):
         response = get_page(request, first_page.slug)
         self.assertEqual(response.status_code, 200)
 
-    def test_create_page_view(self):
+    def test_create_page_and_get_pages_by_tag_views(self):
         request = self.factory.get('/ma-1ere-page/')
         response = create_page(request)
         self.assertEqual(response.status_code, 200)
 
-        form_data = {'title': 'je ne suis pas inspiré', 'content': 'prout'}
+        form_data = {'title': 'je ne suis pas inspiré', 'content': 'prout', 'tags': 'rototo'}
         response = self.client.post("/page/create/", form_data)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Page.objects.get(id=2).slug, 'je-ne-suis-pas-inspire')
+
+        request = self.factory.get('/page/by-tag/rototo/')
+        response = get_pages_by_tag(request, tag="rototo")
+        self.assertEqual(response.status_code, 200)
