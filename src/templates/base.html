@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>pyromane</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+        <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+
+    </head>
+    <body>
+        <header></header>
+        <nav><a href="{% url 'home' %}">Homepage</a> | <a href="{% url 'create_page' %}">Créer une nouvelle page</a> | <a href="{% url 'home' %}sitemap.xml">Sitemap</a> </nav>
+        <article>
+        {% block content %}{% endblock content %}
+        </article>
+        <footer></footer>
+    </body>
+</html>

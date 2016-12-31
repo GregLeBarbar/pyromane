@@ -1,0 +1,6 @@
+# Import Base Requirements
+-r base.txt
+
+# Local Specific Requirements
+flake8==3.2.1
+coverage==4.3.1

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Créer une nouvelle page</h2>
+    <form action="" method="post">{% csrf_token %}
+        {{ page_form.as_p }}
+        <input type="submit" name="save" value="Enregistrer">
+    </form>
+{% endblock content %}
