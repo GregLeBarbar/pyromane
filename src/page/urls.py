@@ -1,11 +1,16 @@
 # coding:utf-8
 from django.conf.urls import url
-from .views import create_page, get_page, get_pages_by_tag
+from .views import edit_page, get_page, get_pages_by_tag
 
 urlpatterns = [
+
     url(r'^create/$',
-        create_page,
+        edit_page,
         name='create_page'),
+
+    url(r'^edit/(?P<page_id>\d+)/$',
+        edit_page,
+        name='edit_page'),
 
     url(r'^by-tag/(?P<tag>[a-z0-9-_]+)/$',
         get_pages_by_tag,

@@ -1,0 +1,88 @@
+body {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    color: #0c3c26;
+    background: white;
+}
+
+header {
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+nav {
+    margin-bottom: 5%;
+    color: white;
+    background-color: #3776ab;
+}
+
+nav a {
+    padding-left: 2%;
+    padding-right: 2%;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    border-top-style: solid;
+    border-color: #3776ab;
+    border-width: 1px;
+    margin-top:5%;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    text-indent: -3px;
+    color: #3776ab;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+}
+
+.main-title {
+    font-size: 4rem;
+}
+
+.content {
+    word-break: break-word;
+}
+
+pre {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    width: 100%;
+    padding: 10px;
+    font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace, sans-serif;
+    font-size: 0.9em;
+    white-space: pre;
+    overflow: auto;
+    background: #3776ab;
+    color: #f8f8f2;
+    border-radius: 0.3em;
+}
+
+code {
+    color: white;
+    padding: 1px 3px;
+    font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', monospace, sans-serif;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+    background: #3776ab;
+    color: #f8f8f2;
+    border-radius: 0.3em;
+}
+
+.error {
+    color: red;
+}

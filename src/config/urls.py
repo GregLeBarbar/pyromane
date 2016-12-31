@@ -32,6 +32,7 @@ info_dict = {
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+
     # the sitemap
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6)}},
@@ -39,6 +40,7 @@ urlpatterns = [
 
     url(r'^page/', include('page.urls')),
     url(r'^$', home, name='home'),
+    url('^', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 TAGGIT_CASE_INSENSITIVE = True

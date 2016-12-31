@@ -3,5 +3,5 @@ htmlcov/
 .coverage
 .idea/
 db.sqlite3
-/src/static/
-/src/static-for-dev/
+/static/
+/static-for-dev/

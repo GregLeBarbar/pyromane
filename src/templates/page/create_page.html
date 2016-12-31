@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if is_edit_page %}
+    <h2>Éditer une nouvelle page</h2>
+    {% else %}
     <h2>Créer une nouvelle page</h2>
+    {% endif %}
     <form action="" method="post">{% csrf_token %}
         {{ page_form.as_p }}
         <input type="submit" name="save" value="Enregistrer">

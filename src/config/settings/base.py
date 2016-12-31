@@ -44,10 +44,6 @@ def get_secret(setting, secrets=secrets):
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret("SECRET_KEY")
 
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -99,6 +95,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+LOGIN_REDIRECT_URL = "/"
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -137,7 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (SRC_DIR.child("static"),)
+STATICFILES_DIRS = (BASE_DIR.child("static"),)
 
 SITE_ID = 1
 
@@ -150,6 +148,7 @@ CKEDITOR_CONFIGS = {
             {'name': 'basicstyles1', 'items': ['Bold', 'Italic', 'Underline']},
             {'name': 'basicstyles2', 'items': ['NumberedList', 'BulletedList']},
             {'name': 'basicstyles3', 'items': ['Subscript', 'Superscript']},
+            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
             {'name': 'links', 'items': ['Link', 'Unlink']},
             {'name': 'clipboard', 'items': ['Undo', 'Redo']},
             {'name': 'tools', 'items': ['Maximize']},

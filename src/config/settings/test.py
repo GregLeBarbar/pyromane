@@ -19,3 +19,5 @@ DATABASES = {
 }
 
 STATIC_ROOT = BASE_DIR.child('static-for-dev')  # noqa
+
+ALLOWED_HOSTS = ['testserver']

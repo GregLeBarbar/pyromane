@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from taggit.models import Tag
 
@@ -5,16 +6,23 @@ from page.forms import PageForm
 from page.models import Page
 
 
-def create_page(request):
-    """ Create a new page """
-    page_form = PageForm(request.POST or None)
+@login_required
+def edit_page(request, page_id=None):
+    """ Create a new page or edit an existing page """
+    if page_id:
+        page = Page.objects.get(id=page_id)
+    else:
+        page = None
+    is_edit_page = (page is not None)
+    page_form = PageForm(instance=page, data=request.POST or None)
     if page_form.is_valid():
         page = page_form.save()
         return redirect(page)
 
-    return render(request, 'page/create_page.html', {'page_form': page_form})
+    return render(request, 'page/create_page.html', {'page_form': page_form, 'is_edit_page': is_edit_page})
 
 
+@login_required
 def get_page(request, slug):
     """ Get page """
     page = Page.objects.get(slug=slug)
