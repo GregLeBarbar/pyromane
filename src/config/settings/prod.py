@@ -20,3 +20,5 @@ DATABASES = {
 }
 
 STATIC_ROOT = BASE_DIR.child('static')  # noqa
+
+ALLOWED_HOSTS = ['greglebarbar.pythonanywhere.com']
