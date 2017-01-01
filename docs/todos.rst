@@ -1,3 +1,7 @@
+===============
+Liste des todos
+===============
+
 - flavicon
 - robot.txt
 - travailler sur la sémantique HTML
