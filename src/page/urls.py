@@ -12,7 +12,7 @@ urlpatterns = [
         edit_page,
         name='edit_page'),
 
-    url(r'^by-tag/(?P<tag>[a-z0-9-_]+)/$',
+    url(r'^by-tag/(?P<tag_slug>[a-z0-9-_]+)/$',
         get_pages_by_tag,
         name='get_pages_by_tag'),
 

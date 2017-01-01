@@ -29,9 +29,9 @@ def get_page(request, slug):
     return render(request, 'page/get_page.html', {'page': page})
 
 
-def get_pages_by_tag(request, tag):
+def get_pages_by_tag(request, tag_slug):
     """ Get list of pages by tag """
-    pages = Page.objects.filter(tags__name__in=[tag])
+    pages = Page.objects.filter(tags__slug__in=[tag_slug])
     return render(request, 'page/list.html', {'pages': pages})
 
 
