@@ -1,3 +1,4 @@
+# coding:utf-8
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from taggit.models import Tag
@@ -31,8 +32,9 @@ def get_page(request, slug):
 
 def get_pages_by_tag(request, tag_slug):
     """ Get list of pages by tag """
+    tag = Tag.objects.get(slug=tag_slug)
     pages = Page.objects.filter(tags__slug__in=[tag_slug])
-    return render(request, 'page/list.html', {'pages': pages})
+    return render(request, 'page/list.html', {'pages': pages, 'tag': tag})
 
 
 def home(request):

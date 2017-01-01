@@ -49,6 +49,29 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    font-size: 2rem;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    text-indent: -3px;
+    color: #3776ab;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    text-indent: -3px;
+    color: #3776ab;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+}
+
+
 .main-title {
     font-size: 4rem;
 }
@@ -85,4 +108,13 @@ code {
 
 .error {
     color: red;
+}
+
+.last-changed {
+    font-size: 0.9rem;
+}
+
+.tags {
+    margin-bottom:5%;
+    font-size: 0.9rem;
 }
