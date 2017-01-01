@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-import sys
+import sys, os
 
 if __name__ == "__main__":
 
     # La variable d'environnement DJANGO_SETTINGS_MODULE est maintenant
-    # définie dans le fichier postactivate du virtualenv
-    # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
+    # definie dans le fichier postactivate du virtualenv
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.prod")
 
     try:
         from django.core.management import execute_from_command_line

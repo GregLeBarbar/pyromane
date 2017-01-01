@@ -11,9 +11,10 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pyromane',
-        'USER': 'pyromane',
+        'NAME': 'GregLeBarbar$pyromane',
+        'USER': 'GregLeBarbar',
         'PASSWORD': get_secret("DATABASE_PASSWORD"),  # noqa
+        'HOST': 'GregLeBarbar.mysql.pythonanywhere-services.com',
     }
 }
 
