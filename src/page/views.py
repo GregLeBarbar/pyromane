@@ -17,8 +17,11 @@ def edit_page(request, page_id=None):
     is_edit_page = (page is not None)
     page_form = PageForm(instance=page, data=request.POST or None)
     if page_form.is_valid():
+        data = page_form.data
         page = page_form.save()
-        return redirect(page)
+
+        if 'save_and_close' in data:
+            return redirect(page)
 
     return render(request, 'page/create_page.html', {'page_form': page_form, 'is_edit_page': is_edit_page})
 

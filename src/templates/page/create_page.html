@@ -7,7 +7,8 @@
     <h2>Créer une nouvelle page</h2>
     {% endif %}
     <form action="" method="post">{% csrf_token %}
+        {% include 'page/includes/toolbar.inc.html' %}
         {{ page_form.as_p }}
-        <input type="submit" name="save" value="Enregistrer">
+        {% include 'page/includes/toolbar.inc.html' %}
     </form>
 {% endblock content %}

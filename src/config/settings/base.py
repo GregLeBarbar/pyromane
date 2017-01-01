@@ -96,6 +96,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -119,9 +120,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'fr'
+LANGUAGE_CODE = 'fr-fr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
@@ -156,7 +157,6 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'wiki',  # put selected toolbar config here
         'tabSpaces': 4,
         'height': 600,
-        'width': 1500,
 
         ##
         # Link configuration

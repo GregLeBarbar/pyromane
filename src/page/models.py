@@ -9,11 +9,11 @@ from taggit.managers import TaggableManager
 
 class Page(TimeStampedModel):
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, verbose_name="Titre")
     slug = AutoSlugField(populate_from='title', unique=True)
-    content = RichTextField(config_name='wiki')
+    content = RichTextField(config_name='wiki', verbose_name="Contenu")
 
-    tags = TaggableManager()
+    tags = TaggableManager(help_text="Les tags doivent être séparés par une virgule")
 
     class Meta:
         db_table = 'page'
