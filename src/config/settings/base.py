@@ -135,10 +135,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = (BASE_DIR.child("static"),)
-
 SITE_ID = 1
 
+TAGGIT_CASE_INSENSITIVE = True
 
 CKEDITOR_CONFIGS = {
 
