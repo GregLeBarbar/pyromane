@@ -114,10 +114,15 @@ code {
     font-size: 0.9rem;
 }
 
-.tags {
-    margin-bottom:5%;
+section article .tags {
+    margin-bottom: 5%;
     font-size: 0.9rem;
 }
+
+section .tags {
+    margin-bottom: 5%;
+}
+
 
 .django-ckeditor-widget {
     width: 100%;

@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block nav %}{% if  request.user.is_authenticated %}<a href="{% url 'edit_page' page_id=page.id %}">Éditer</a> |{% endif %}{% endblock nav %}
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <div class="last-changed">
-        Dernière modif: {{ page.modified }}
-    </div>
-    <div class="tags">
-    {% for tag in page.tags.all %}
-        <a href="{% url 'get_pages_by_tag' tag_slug=tag.slug %}">{{ tag }}</a> .
-    {% endfor %}
-    </div>
-    <div>{{ page.content|safe }}</div>
-
+    <article>
+        <h1>{{ page.title }}</h1>
+        <div class="last-changed">
+            Dernière modif: {{ page.modified }}
+        </div>
+        <div class="tags">
+        {% for tag in page.tags.all %}
+            <a href="{% url 'get_pages_by_tag' tag_slug=tag.slug %}">{{ tag }}</a>{% if not forloop.last %} .{% endif %}
+        {% endfor %}
+        </div>
+        <div>{{ page.content|safe }}</div>
+    </article>
 {% endblock content %}

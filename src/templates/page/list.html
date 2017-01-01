@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div>Tous les articles du tag <strong>{{ tag.name }}</strong> :</div>
     <div>
-    {% for page in pages %}
-        <a href="{% url 'get_page' slug=page.slug %}">{{ page.title }}</a>
-    {% endfor %}
+        <div>Tous les articles du tag <strong>{{ tag.name }}</strong> :</div>
+        <ul>
+        {% for page in pages %}
+            <li><a href="{% url 'get_page' slug=page.slug %}">{{ page.title }}</a></li>
+        {% endfor %}
+        </ul>
     </div>
-
 {% endblock content %}

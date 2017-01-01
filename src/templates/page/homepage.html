@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {%  if request.user.is_authenticated %}
-    <div class="tags">
-    Navigation par tags :</br>
-    {% for tag in tags.all %}
-        <a href="{% url 'get_pages_by_tag' tag_slug=tag.slug %}">{{ tag }}</a>
-    {% endfor %}
+    <div>
+        {%  if request.user.is_authenticated %}
+        <div class="tags">
+        Navigation par tags :</br>
+        {% for tag in tags.all %}
+            <a href="{% url 'get_pages_by_tag' tag_slug=tag.slug %}">{{ tag }}</a>
+        {% endfor %}
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 {% endblock content %}

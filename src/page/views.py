@@ -42,5 +42,5 @@ def get_pages_by_tag(request, tag_slug):
 
 def home(request):
     """ Display Homepage """
-    tags = Tag.objects.all()
+    tags = Tag.objects.order_by('name')
     return render(request, 'page/homepage.html', {'tags': tags})
