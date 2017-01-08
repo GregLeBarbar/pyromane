@@ -5,3 +5,4 @@ htmlcov/
 db.sqlite3
 /static/
 /static-for-dev/
+/uploads/

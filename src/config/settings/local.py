@@ -25,15 +25,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'pyromane',
         'USER': 'pyromane',
         'PASSWORD': get_secret("DATABASE_PASSWORD"),  # noqa
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
 
 STATIC_ROOT = BASE_DIR.child('static-for-dev')  # noqa
+
+MEDIA_ROOT = BASE_DIR.child('uploads')  # noqa
 
 ALLOWED_HOSTS = ['127.0.0.1', 'testserver']

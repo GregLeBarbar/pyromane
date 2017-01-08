@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     # packages
     'ckeditor',
+    'ckeditor_uploader',
     'taggit',
     # apps
     'page',
@@ -136,9 +137,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+
 SITE_ID = 1
 
 TAGGIT_CASE_INSENSITIVE = True
+
+CKEDITOR_UPLOAD_PATH = "fckeditorimage/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 CKEDITOR_CONFIGS = {
 
@@ -150,6 +157,8 @@ CKEDITOR_CONFIGS = {
             {'name': 'basicstyles3', 'items': ['Subscript', 'Superscript']},
             {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
             {'name': 'links', 'items': ['Link', 'Unlink']},
+            {'name': 'insert',
+             'items': ['Image', ]},
             {'name': 'clipboard', 'items': ['Undo', 'Redo']},
             {'name': 'tools', 'items': ['Maximize']},
             {'name': 'document', 'items': ['Source']},
@@ -159,15 +168,12 @@ CKEDITOR_CONFIGS = {
         'height': 600,
 
         ##
-        # Link configuration
+        # Image & Link configuration
         ##
 
         # hide tab and browser server button
         'linkShowAdvancedTab': False,
         'linkShowTargetTab': False,
-        'removeDialogTabs': 'link:upload',
-
-        # hide browser server button
-        'filebrowserBrowseUrl': '',
+        'removeDialogTabs': 'link:upload;image:advanced;image:Link',
     },
 }

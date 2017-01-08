@@ -84,3 +84,22 @@ Base de données
 Avec un compte gratuit, on ne peut utiliser que MySQL.
 C'est la solution retenue en attendant de passer à un compte payant et ainsi pouvoir utiliser postgreSQL,
 la base de données recommandée pour django.
+
+Pour se connecter à la base de données
+---------------------------------------
+
+On peut :
+- soit lancer une console MySQL directement dans la partie admin de l'hébergeur
+- soit lancer une console bash directement dans la partie admin de l'hébergeur puis :
+mysql 'GregLeBarbar$pyromane' -uGregLeBarbar -pxxxxx -h 'GregLeBarbar.mysql.pythonanywhere-services.com'
+
+
+Pour faire un dump de la base de données
+----------------------------------------
+
+Lancer une console bash directement dans la partie admin de l'hébergeur.
+Puis
+
+mysqldump 'GregLeBarbar$pyromane' -uGregLeBarbar -pxxxxx -h 'GregLeBarbar.mysql.pythonanywhere-services.com' > dump.sql
+
+

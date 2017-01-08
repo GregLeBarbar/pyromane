@@ -14,10 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from ckeditor_uploader import views
 from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 
@@ -32,6 +34,9 @@ info_dict = {
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+    # Ckeditor explicit call to change decorator
+    url(r'^upload/', login_required(views.upload), name='ckeditor_upload'),
+    url(r'^browse/', login_required(views.browse), name='ckeditor_browse'),
 
     # the sitemap
     url(r'^sitemap\.xml$', sitemap,
@@ -41,6 +46,7 @@ urlpatterns = [
     url(r'^page/', include('page.urls')),
     url(r'^$', home, name='home'),
     url('^', include('django.contrib.auth.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 TAGGIT_CASE_INSENSITIVE = True

@@ -15,7 +15,7 @@ def edit_page(request, page_id=None):
     else:
         page = None
     is_edit_page = (page is not None)
-    page_form = PageForm(instance=page, data=request.POST or None)
+    page_form = PageForm(request.POST or None, request.FILES or None, instance=page)
     if page_form.is_valid():
         data = page_form.data
         page = page_form.save()

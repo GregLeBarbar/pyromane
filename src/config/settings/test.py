@@ -5,8 +5,6 @@ from .base import *  # noqa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 

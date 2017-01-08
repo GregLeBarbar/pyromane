@@ -40,9 +40,9 @@ class PageModelTestCase(TestCase):
 class PageViewTestCase(TestCase):
 
     def setUp(self):
-        Page.objects.create(title="Ma 1ère page")
-        self.client.force_login(User.objects.get_or_create(username='testuser')[0])
         self.factory = RequestFactory()
+        self.client.force_login(User.objects.get_or_create(username='testuser')[0])
+        Page.objects.create(title="Ma 1ère page")
 
     def test_home_view(self):
         request = self.factory.get('/')
@@ -50,29 +50,39 @@ class PageViewTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_get_page_view(self):
+        response = self.client.get('/page/get/ma-1ere-page/')
+        self.assertEqual(response.status_code, 200)
 
-        pass
+    def test_create_page_and_get_pages_by_tag_views(self):
 
-        # Les tests ci-dessous ne fonctionnent plus depuis la mise en place de l'authentification
-        # first_page = Page.objects.get(id=1)
-        # request = self.factory.get('/ma-1ere-page/')
-        # response = get_page(request, first_page.slug)
+        # Test create page
+        response = self.client.post('/page/create/',
+                                    {'title': 'je ne suis pas inspiré', 'content': 'vraiment pas', 'tags': 'supertag'})
+        self.assertEqual(response.status_code, 200)
+
+        # Test get page
+        self.assertEqual(Page.objects.get(id=2).slug, 'je-ne-suis-pas-inspire')
+        response = self.client.get('/page/get/je-ne-suis-pas-inspire/')
+        self.assertEqual(response.status_code, 200)
+
+        # Test get all pages by tag
+        response = self.client.get('/page/by-tag/supertag/')
+        self.assertEqual(response.status_code, 200)
+
+        # Test edit page
+        response = self.client.get('/page/edit/2/')
+        self.assertEqual(response.status_code, 200)
+
+        # Test modify page
+        response = self.client.post('/page/edit/2/',
+                                    {'title': 'je ne suis pas inspiré mais vraiment pas',
+                                     'content': 'vraiment pas',
+                                     'tags': 'supertag',
+                                     },
+                                    follow=True)
+        self.assertEqual(response.status_code, 200)
+
+        # Test get page
+        # self.assertEqual(Page.objects.get(id=2).slug, 'je-ne-suis-pas-inspire-mais-vraiment-pas')
+        # response = self.client.get('/page/get/je-ne-suis-pas-inspire-mais-vraiment-pas/')
         # self.assertEqual(response.status_code, 200)
-        # response = self.client.get('/')
-        # self.assertEqual(response.status_code, 200)
-        # self.assertRedirects(response, '/accounts/login/?next=/sekrit/')
-
-    #  def test_create_page_and_get_pages_by_tag_views(self):
-    #     self.client.login(username='john', password='johnpassword')
-    #     request = self.factory.get('/ma-1ere-page/')
-    #     response = self.client.get(reverse(edit_page(request)))
-    #     self.assertEqual(response.status_code, 200)
-    #
-    #     form_data = {'title': 'je ne suis pas inspiré', 'content': 'prout', 'tags': 'rototo'}
-    #     response = self.client.post("/page/create/", form_data)
-    #     self.assertEqual(response.status_code, 302)
-    #     self.assertEqual(Page.objects.get(id=2).slug, 'je-ne-suis-pas-inspire')
-    #
-    #     request = self.factory.get('/page/by-tag/rototo/')
-    #     response = get_pages_by_tag(request, tag="rototo")
-    #     self.assertEqual(response.status_code, 200)
