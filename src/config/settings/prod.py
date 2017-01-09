@@ -20,6 +20,6 @@ DATABASES = {
 
 STATIC_ROOT = BASE_DIR.child('static')  # noqa
 
-MEDIA_ROOT = BASE_DIR.child('uploads')  # noqa
+MEDIA_ROOT = '/home/GregLeBarbar/pyromane/uploads'
 
 ALLOWED_HOSTS = ['greglebarbar.pythonanywhere.com']
