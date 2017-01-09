@@ -18,7 +18,7 @@ Nous avons définit la variable d'environnement **DJANGO_SETTINGS_MODULE** dans 
 
 .. code:: bash
 
-    export DJANGO_SETTINGS_MODULE=config.settings.prod
+    export DJANGO_SETTINGS_MODULE=config.settings.local
 
 
 Astuce

@@ -1,5 +1,2 @@
 # Import Base Requirements
 -r base.txt
-
-# We use MySQL in production
-mysqlclient==1.3.9
