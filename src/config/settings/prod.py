@@ -20,4 +20,6 @@ DATABASES = {
 
 STATIC_ROOT = BASE_DIR.child('static')  # noqa
 
+MEDIA_ROOT = BASE_DIR.child('uploads')  # noqa
+
 ALLOWED_HOSTS = ['greglebarbar.pythonanywhere.com']
