@@ -1,12 +1,13 @@
 {% extends "base.html" %}
-
+{% load taggit_templatetags2_tags %}
 {% block content %}
     <div>
         {%  if request.user.is_authenticated %}
         <div class="tags">
         Navigation par tags :</br>
-        {% for tag in tags.all %}
-            <a href="{% url 'get_pages_by_tag' tag_slug=tag.slug %}">{{ tag }}</a>
+        {% get_taglist as tags %}
+        {% for tag in tags %}
+            <a href="{% url 'get_pages_by_tag' tag_slug=tag.slug %}">{{ tag }} ({{tag.num_times}})</a>
         {% endfor %}
         </div>
         {% endif %}

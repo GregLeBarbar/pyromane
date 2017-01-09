@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'taggit',
+    'taggit_templatetags2',
     # apps
     'page',
 ]
