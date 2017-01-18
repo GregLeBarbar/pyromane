@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <div>Tous les articles du tag <strong>{{ tag.name }}</strong> :</div>
+        <ul>
+        {% for page in pages %}
+            <li><a href="{% url 'get_page' slug=page.slug %}">{{ page.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

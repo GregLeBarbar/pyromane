@@ -40,7 +40,4 @@ def get_pages_by_tag(request, tag_slug):
     return render(request, 'page/list.html', {'pages': pages, 'tag': tag})
 
 
-def home(request):
-    """ Display Homepage """
-    tags = Tag.objects.order_by('name')
-    return render(request, 'page/homepage.html', {'tags': tags})
+

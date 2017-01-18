@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% load taggit_templatetags2_tags %}
 {% block content %}
-    <div>
+    <div class="blog">
+        {% for article in articles %}
+        <article>
+            <div>
+                <a href="{% url 'get_article' slug=article.slug %}">{{ article.title }}</a>
+            </div>
+            <div>
+                {{ article.subtitle|safe }}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    <div class="wiki">
         {%  if request.user.is_authenticated %}
         <div class="tags">
         Navigation par tags :</br>
@@ -12,4 +24,5 @@
         </div>
         {% endif %}
     </div>
+    <div style="clear:both;">
 {% endblock content %}

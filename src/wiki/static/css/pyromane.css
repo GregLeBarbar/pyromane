@@ -145,3 +145,13 @@ section .tags {
     margin-bottom: 2%;
 
 }
+
+.blog{
+    float: left;
+    width : 70%;
+    margin-right: 5%;
+}
+.wiki {
+
+
+}

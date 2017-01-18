@@ -24,7 +24,7 @@ from django.contrib.sitemaps import GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 
 from wiki.models import Page
-from wiki.views import home
+from blog.views import home
 
 info_dict = {
     'queryset': Page.objects.all(),
@@ -44,6 +44,7 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
 
     url(r'^page/', include('wiki.urls')),
+    url(r'^blog/', include('blog.urls')),
     url(r'^$', home, name='home'),
     url('^', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

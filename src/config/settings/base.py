@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'taggit_templatetags2',
     # apps
     'wiki',
+    'blog',
 ]
 
 MIDDLEWARE = [
