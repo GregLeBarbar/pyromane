@@ -23,8 +23,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 
-from page.models import Page
-from page.views import home
+from wiki.models import Page
+from wiki.views import home
 
 info_dict = {
     'queryset': Page.objects.all(),
@@ -43,7 +43,7 @@ urlpatterns = [
         {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6)}},
         name='django.contrib.sitemaps.views.sitemap'),
 
-    url(r'^page/', include('page.urls')),
+    url(r'^page/', include('wiki.urls')),
     url(r'^$', home, name='home'),
     url('^', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

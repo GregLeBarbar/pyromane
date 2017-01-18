@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from taggit.models import Tag
 
-from page.forms import PageForm
-from page.models import Page
+from .forms import PageForm
+from .models import Page
 
 
 @login_required

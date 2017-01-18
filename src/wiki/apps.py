@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class PageConfig(AppConfig):
-    name = 'src.page'
+    name = 'src.wiki'

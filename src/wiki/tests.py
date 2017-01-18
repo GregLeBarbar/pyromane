@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.test import RequestFactory
 from django.test import TestCase
 
-from page.models import Page
-from page.views import home
+from .models import Page
+from .views import home
 
 
 class PageModelTestCase(TestCase):
