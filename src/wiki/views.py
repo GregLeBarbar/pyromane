@@ -38,6 +38,3 @@ def get_pages_by_tag(request, tag_slug):
     tag = Tag.objects.get(slug=tag_slug)
     pages = Page.objects.filter(tags__slug__in=[tag_slug])
     return render(request, 'page/list.html', {'pages': pages, 'tag': tag})
-
-
-
