@@ -26,6 +26,7 @@ from django.contrib.sitemaps.views import sitemap
 from wiki.models import Page
 from blog.views import home
 
+
 info_dict = {
     'queryset': Page.objects.all(),
     'date_field': 'modified',

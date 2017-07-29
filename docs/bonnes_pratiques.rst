@@ -2,7 +2,7 @@
 Bonnes pratiques de développement
 =================================
 
-Respect des bonnes pratiques énoncés dans le livre Two Scoops of django 1.8
+Respect des bonnes pratiques énoncés dans le livre Two Scoops of django 1.11
 
 
 1. Style de codage :

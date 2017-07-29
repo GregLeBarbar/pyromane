@@ -3,7 +3,21 @@ PyRomane
 =================
 
 Cette application a pour but de répondre à mes besoins personnels dans la mise en ligne de contenu privé ou public.
-Elle est réalisée en python3 et django 1.10.
+Elle est réalisée en python3 et django 1.11.
+
+Installation
+============
+
+créer un virtualenv
+-------------------
+
+mkvirtualenv --python=/usr/bin/python3 pyromane
+
+installer les dépendances
+-------------------------
+
+pip install -r requirements/local.txt
+
 
 Convention de codage
 ====================
@@ -20,7 +34,7 @@ Pour lancer flake8 :
 Bonnes pratiques
 ================
 
-Respect des bonnes pratiques énoncées dans le livre Two Scoops of django 1.8.
+Respect des bonnes pratiques énoncées dans le livre Two Scoops of django 1.11.
 
 
 Comment exécuter les tests automatiques

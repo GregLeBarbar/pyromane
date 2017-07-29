@@ -17,10 +17,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).ancestor(4)
-print('BASE DIR : {0}'.format(BASE_DIR))
-
 SRC_DIR = Path(__file__).ancestor(3)
-print('SRC DIR : {0}'.format(SRC_DIR))
 
 # JSON-Based secrets module
 with open(BASE_DIR + "/secrets.json", 'r') as f:
