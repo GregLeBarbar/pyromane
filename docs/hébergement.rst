@@ -103,3 +103,36 @@ Puis
 mysqldump 'GregLeBarbar$pyromane' -uGregLeBarbar -pxxxxx -h 'GregLeBarbar.mysql.pythonanywhere-services.com' > dump.sql
 
 
+FAQ
+===
+
+Comment se connecter en SSH ?
+-----------------------------
+
+ssh GregLeBarbar@ssh.pythonanywhere.com
+
+
+Comment se connecter à la base de données ?
+-------------------------------------------
+
+mysql 'GregLeBarbar$pyromane' -uGregLeBarbar -p -h 'GregLeBarbar.mysql.pythonanywhere-services.com'
+
+
+Remarque:
+
+Pour le mot de passe du user pyromane, il est présent dans le fichier secrets.json
+
+
+Comment faire un backup des données ?
+-------------------------------------
+
+python src/manage.py dumpdata --output dumpdata_29_07_2017 --verbosity 1
+
+--output permet de renseigner un fichier
+--verbosity permet d'afficher une barre de progression
+
+
+Comment copier un fichier du serveur vers ma machine ?
+------------------------------------------------------
+
+scp -r GregLeBarbar@ssh.pythonanywhere.com:/home/GregLeBarbar/pyromane/dumpdata_29_07_2017  /home/greg/workspace-perso/pyromane/
