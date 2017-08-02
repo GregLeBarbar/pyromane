@@ -38,6 +38,13 @@ def django_manage(cmd, local_env=True):
             run('python src/manage.py ' + cmd)
 
 
+def deploy():
+
+    with cd(env.project_root_path):
+        run("git pull")
+        run("touch /var/www/greglebarbar_pythonanywhere_com_wsgi.py")
+
+
 def clone():
     """
     Le but de cette commande est de permettre de récupérer les données

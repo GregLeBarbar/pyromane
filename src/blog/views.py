@@ -44,6 +44,6 @@ def get_articles_by_tag(request, tag_slug):
 
 def home(request):
     """ Display Homepage """
-    articles = Article.objects.all()
+    articles = Article.objects.all().order_by('-published')
     tags = Tag.objects.order_by('name')
     return render(request, 'blog/homepage.html', {'tags': tags, 'articles': articles})

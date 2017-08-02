@@ -13,7 +13,7 @@ class Article(TimeStampedModel):
     title = models.CharField(max_length=255, verbose_name="Titre")
     slug = AutoSlugField(populate_from='title', unique=True)
     subtitle = RichTextUploadingField(config_name='wiki', verbose_name="Sous titre")
-    content = RichTextUploadingField(config_name='wiki', verbose_name="Contenu")
+    content = RichTextUploadingField(config_name='wiki', verbose_name="Contenu", null=True, blank=True)
     file = models.FileField(null=True, blank=True)
 
     tags = TaggableManager(help_text="Les tags doivent être séparés par une virgule")
